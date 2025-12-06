@@ -12,6 +12,8 @@ APPROVED_BREEDS = [
 ]
 
 class Dog:
+    approved_breeds = ["Mastiff", "Chihuahua", "Corgi", "Shar Pei", "Beagle", "French Bulldog", "Pug", "Pointer"]
+    
     def __init__(self, name="", breed="Mastiff"):
         self.name = name
         self.breed = breed
@@ -31,7 +33,7 @@ class Dog:
         return self._breed
     
     def set_breed(self, breed):
-        if breed in approved_breeds:
+        if breed in self.approved_breeds:  # Note: using self.approved_breeds
             self._breed = breed
         else:
             print("Breed must be in list of approved breeds.")

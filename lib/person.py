@@ -16,6 +16,10 @@ APPROVED_JOBS = [
 ]
 
 class Person:
+    approved_jobs = ["Admin", "Customer Service", "Human Resources", "ITC", "Production", 
+                     "Legal", "Finance", "Sales", "General Management", "Research & Development", 
+                     "Marketing", "Purchasing"]
+    
     def __init__(self, name="", job=""):
         self.name = name
         self.job = job
@@ -35,7 +39,7 @@ class Person:
         return self._job
     
     def set_job(self, job):
-        if job in approved_jobs:
+        if job in self.approved_jobs:  # Note: using self.approved_jobs
             self._job = job
         else:
             print("Job must be in list of approved jobs.")
